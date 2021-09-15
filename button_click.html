@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title></title>
+</head>
+<body>
+
+    <!-- Write your HTML content here file will load or read top to bottom-->
+    <button>Click Here!</button>
+
+<script>
+
+    // Write your script here
+    let button = document.querySelector('button') // var could be used or const. use let
+            
+    
+        button.addEventListener("click", function(){
+            alert('You Clicked the Button!')
+            button.innerHTML = 'You Clicked it!'
+            button.style.backgroundColor ='red'
+            //button.remove()
+        })
+</script>
+
+</body>
+</html>
