@@ -1,0 +1,63 @@
+<!DOCTYPE  html>
+<html lang="en">
+<head>
+
+        <title></title>
+
+</head>
+<body>
+    
+                 <!--HTML content here -->
+
+    <p>What is the capital of Minneapolis?</p>
+
+    <button class="wrong-answer">Saint Paul</button>
+    <button id="correct-answer">Minneapolis</button>
+    <button class="wrong-answer">Plymouth</button>
+
+    <p id="result"></p>
+<script>
+// Javascript here.
+    let correctAnswerButton = document.querySelector('#correct-answer')//vaiable declaration and argument.
+    //console.log(correctAnswerButton) //setsup log into the colesole window for error checking. not needed perm.
+    
+    let defaultButtonColor = correctAnswerButton.style.background  //sets background color variable allowing it to be called.
+
+    let result = document.querySelector('#result')
+   
+    let wrongAnswerButtons = document.querySelectorAll('.wrong-answer')//new varible and css class all the buttons of this class get this assigement
+    
+    //add an event Listener to both WRONG answer button(s).
+    //functional style looping.
+    // wrongAnswerButtons.forEach( function (wrongAnswerButton) {  //repeats-loop-forEach one time for each element(wrongbutton) in the nodelist.
+    //     wrongAnswerButton.addEventListener('click', function() {
+    //         result.innerHTML = "Wrong Answer, try again"    
+    //         correctAnswerButton.style.background = defaultButtonColor //resets background color to blank.
+    //     })   
+    // } )//two arguments 
+
+    //imperitive style loop
+    //x is a loop counter,  count how many times loop need to repaet x++ adds loop repaet + 1.
+    // condition on when to stop wronganswerbutton while x is less then lenght = 2. 
+    for (let x=0 ; x< wrongAnswerButtons.length; x++) {
+        let wrongAnswerButton = wrongAnswerButtons[x] //x here refers to list
+        
+        wrongAnswerButton.addEventListener('click', function() {
+            result.innerHTML = "Wrong Answer, try again"    
+            correctAnswerButton.style.background = defaultButtonColor //resets background color to blank.
+        })   
+    
+    }    
+        //adds event listner to one correct answer button.
+    correctAnswerButton.addEventListener('click', function() {
+        result.innerHTML = 'Correct Answer, good job!'//adding element result to give string note when Minneapolis is selected.
+        correctAnswerButton.style.background = 'cyan'
+
+    })
+</script>
+
+
+</body>
+
+
+</html>

@@ -6,20 +6,23 @@
 <body>
 
     <!-- Write your HTML content here file will load or read top to bottom-->
-    <button>Click Here!</button>
+    <button>Click Here!</button><!--creates a basic button element-->
 
 <script>
 
-    // Write your script here
-    let button = document.querySelector('button') // var could be used or const. use let
-            
-    
-        button.addEventListener("click", function(){
-            alert('You Clicked the Button!')
-            button.innerHTML = 'You Clicked it!'
+    // Write your javescript here:
+    // variable declaration "const" could be used "let" both are javascript keyword. finds button element.
+    let button = document.querySelector('button') // document referers to the whole webpage. 
+    //queryselector is an elemtn you pass an arugument to "button".        
+        //function javascript. event listens or watches for event to happen.
+        button.addEventListener("click", function(){  //eventlistiner tells us what's happening on the page.click agument is choosen could use mouseover or another       
+            alert('You Clicked the Button!') //function definition is an object here or a method definded within this line of code.
+            //white space or indentation has no meaning here like phyton.
+            button.innerHTML = 'You Clicked it!' //css styling done here in the javascript
             button.style.backgroundColor ='red'
-            //button.remove()
+            //button.remove() this could be used to remove button element from the page after its clicked. commented out.
         })
+
 </script>
 
 </body>
