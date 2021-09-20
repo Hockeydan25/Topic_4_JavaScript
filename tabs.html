@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Tabbed Content</title>
+  <link rel="stylesheet" type="text/css" href="style_tabs.css">
+</head>
+<body>
+         <!-- Write your HTML content here -->
+<h1>Favorite Foods</h1>
+
+<div id="tabs"> <!--start of tabs division-->
+    <!--making own attribute name data- -->
+    <button data-content-id="pizza" class="tab-button">Pizza</button>
+    <button data-content-id="pie" class="tab-button">Pie</button>
+    <button data-content-id="ramen"class="tab-button">Ramen</button>
+</div><!--division end of tabs-->
+<!--div for coments content for each -->
+<div id="pizza"class="tab-content">Pizza is awesome</div>
+<div id="pie" class="tab-content">Pie is so good</div>
+<div id="ramen" class="tab-content">Ramen is so flavorful</div>
+
+
+<script>// Write your script start here
+
+//creating many tabs
+let buttons = document.querySelectorAll('.tab-button') 
+//
+let tabContents = document.querySelectorAll('.tab-content')
+//css style entered here 
+tabContents.forEach( function(divEl) {
+    divEl.style.display = 'none'
+    
+}) //end of foreach divEl.
+
+//another way to shoe starats with index 0 pizza or first tab.
+tabContents[0].style.display ='block'
+// now we are goong to set the active css class to the starting position.
+buttons[0].classList.add('active')
+//button control function
+buttons.forEach( function(button) {
+
+    button.addEventListener('click', function() {
+
+        //hide all the content.
+        //show the div w content that relates to the buttom that was ckecked.
+        tabContents.forEach( function(divEl) {
+        divEl.style.display = 'none'
+        })
+        //creating for the css active class so when button is clicked color sticks.
+        buttons.forEach( function(button) {
+            button.classList.remove('active')
+        })
+        //again this grabs the button that is clicked and adds its properties
+        this.classList.add('active')
+
+        //new event listerner this means what button was clicked.
+        let contentId = this.getAttribute('data-content-id') //get attribute returns calls id of button click.
+
+        //use tabcontent as a selctor. #ramen 
+        let tabContent = document.querySelector('#' + contentId)
+        tabContent.style.display = 'block'
+    })//end of button add function
+})
+
+//end of javascripts
+</script>
+
+</body>
+</html>

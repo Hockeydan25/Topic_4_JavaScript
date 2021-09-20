@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title></title>
+</head>
+
+<body> <!-- Write your HTML content here -->
+
+    <label for="credit-count">How Many Credits are you enrolled in this semester?</label>
+    <input type="number" id="credit-count">
+    <button id="submit-credits">Enter</button>
+
+    <p id="status-message"></p>
+
+<script>// Write your script here
+
+    let sumbittButton = document.querySelector('#submit-credits')
+    let creditInput = document.querySelector('#credit-count')
+    let statusMessage = document.querySelector('#status-message')
+
+    sumbittButton.addEventListener('click', function(){
+        let credits =creditInput.value 
+        if(credits > 24){
+            statusMessage.innerHTML = 'Error max credits is 24, you can reenter 24 or lower to get your status'
+        }
+            else if(credits >=12){
+            statusMessage.innerHTML = 'You are enrolled with full time status'
+        }   else if (credits >=6) {
+            statusMessage.innerHTML = 'You are enrolled with half time status'
+        } else if (credits >=0){
+            statusMessage.innerHTML = 'You are enrolled with less than half time status'
+        } else{
+            statusMessage.innerHTML = 'Error please enter 0 credits or larger positive number '
+        }
+
+    })// end of event listner for submitt button.
+
+
+//end of javascript section
+</script> 
+
+</body>
+</html>

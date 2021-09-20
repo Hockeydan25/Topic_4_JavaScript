@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title></title>
+</head>
+<body>
+        
+        <label for="username">Please enter your name</label> <!--label foir input form.-->
+        <input type="text" id="username">  <!--input form -->
+        <button id="save-user-name">Submit</button> <!--button save data username-->
+
+        <p id="welcome-message">Welcome, </p>
+        
+    <!-- Write your HTML content here -->
+
+<script>// Write your script here
+
+    let saveButton = document.querySelector('#save-user-name')  //variable declared for save button.
+    let nameInput = document.querySelector('#username') //variable declared name input.
+    let welcomeMessage = document.querySelector('#welcome-message') //variable declared for welcome message.
+    
+    saveButton.addEventListener('click', function(){ 
+        let name = nameInput.value  //variable name set to nameInput called when entered.
+        
+        if (name.length <2) {
+            welcomeMessage.innerHTML = 'PLease enter more than 2 letters'
+        }else{
+        welcomeMessage.innerHTML = `Welcome, ${name}!`
+        }        
+    })
+
+</script>
+
+</body>
+</html>

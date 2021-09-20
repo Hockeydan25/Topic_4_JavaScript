@@ -1,0 +1,31 @@
+.tab-button{
+    background-color:dodgerblue;
+    border:darkred;
+    padding: 10px;
+    margin: 1px;
+    outline: none;
+
+}
+
+.tab-button:hover{
+
+    background-color: blueviolet;
+}
+
+.tab-button.active{
+    /*creating a new class and only applies to class tab-button and new class active*/
+    background-color: aquamarine;
+}
+
+#tabs{
+
+    background-color: lightgray;
+    border: 1px solid darkgray;
+
+}
+.tab-content{
+    border: 1px solid black; 
+    border-left: 1px solid black;
+    border-bottom: 1px solid black;
+    padding: 10px;
+}
