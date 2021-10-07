@@ -5,69 +5,80 @@
 </head>
 <body><!-- Write your HTML content here -->
 
-    <p>Enter some text to add to the list</p>
+    <!-- paragraph Annoucement to dipslay a message  -->
+    <p>Enter some text to add to the list</p> 
+    <!-- elemnet inputbox for user to enter txt. -->
     <input id="new-text"></input>
+    <!-- elemnet button to add/click to store txt -->
     <button id="add-text">Add</button>
-
+    <!-- Empty unordered list element -->
     <ul id="list-of-text"></ul>
-
-    <button id="clear">Clear</button>
+<!-- element button to clear form or txt with button click. -->
+    <button id="clear">Clear</button> //
 
 <script>// Write your script here
-
+// variable for the elements document will store the txt. 
 let textInput = document.querySelector('#new-text')
 let addButton = document.querySelector('#add-text')
 let textList = document.querySelector('#list-of-text')
 let clearButton = document.querySelector('#clear')
 
-let elementsInList = 0 //counts elemnts ion the list
+let elementsInList = 0 //counts elements ion the list
 let maxElementInList = 10 //limits elements in the list 
-
-//allows enter to call click event button 
+let newTextMax = 50 
+// allows you to hit enter using the console you can find the number that the enter keycode 13.
 document.addEventListener('keyup', function() {
-    if (event.keyCode == 13){
-        addButton.click() 
+    if (event.keyCode == 13 || event.key == 'Enter'){    //if statment for eventlistener to take action on if true.
+        addButton.click() //this is the action the enter button takes, cuases a button click function.
     }
 })
-
+// variable to responded listens for click action.
 addButton.addEventListener('click', function(){
 
-    //read the text in the input.
+    //read the text in the input with the variable for the value.
     let newText = textInput.value
-    //vailidate some text is entered.    
+    //vailidate some text is entered. variable checks length of what is typed.    
     if (newText.length == 0) {   
-        alert('Please enter some elements')
+        alert('Please enter some elements') //message dispalyed if true.
+        return
+
+    }
+    //chacks max character lenght for a list item.
+    if (newText.length >= newTextMax){
+        alert('!Max character reached please shorten you list item name!')
         return
     }
 
-    //check to make sure we dont have to many max=10.
+    //documnet.querySelectorAll on the li elements and count how many items you have.
+    //check to make sure we dont have to many max=10, >= will keep you to 10.
     if (elementsInList >= maxElementInList) {
-        alert('no more elements can e added max has been reached')
+        alert('no more elements can be added max, list item entry has been reached') //message dispalyed if true.
         return
     }
-
-    //console.log(newText) checks your output before you move on you can check its working
+    console.log(newText) //can check your output before you move on you can check its working.
+    
     //create a new li list.
-    let newListItem = document.createElement('li')
+    let newListItem = document.createElement('li') // li element is a child of the ul element. 
     //the li element should be the text from the input.
     newListItem.innerHTML = newText
 
     //attach to page with new li element as a child of the ul element
     textList.appendChild(newListItem)
-    //clear the text in the input. 
+    //clear the text in the input. empty string is used here to clear it out. doesn't clear the console.
     textInput.value = ''
 
     elementsInList++
-})
+})//end of addbutton eventlisten
 //clears out the list, all data on list removed.
 clearButton.addEventListener('click', function(){
     textList.innerHTML = ''
 
+    elementsInList++
 })
 
 
-
+// end of the script section 
 </script>
-
+<!-- end of pages boby and html.  -->
 </body>
 </html>

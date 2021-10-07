@@ -14,15 +14,15 @@
 
 <script>// Write your script here
 
-    let sumbittButton = document.querySelector('#submit-credits')
-    let creditInput = document.querySelector('#credit-count')
-    let statusMessage = document.querySelector('#status-message')
+    let sumbittButton = document.querySelector('#submit-credits')//variable and selector type.
+    let creditInput = document.querySelector('#credit-count')//variable and selector type.
+    let statusMessage = document.querySelector('#status-message')//variable and selector type.
 
-    sumbittButton.addEventListener('click', function(){
+    sumbittButton.addEventListener('click', function(){  //eventlistener click function statrting.
         let credits =creditInput.value 
         if(credits > 24){
             statusMessage.innerHTML = 'Error max credits is 24, you can reenter 24 or lower to get your status'
-        }
+        }  //message displayed with if statement is true. series of if else for each cedit amount to find your enrollement.
             else if(credits >=12){
             statusMessage.innerHTML = 'You are enrolled with full time status'
         }   else if (credits >=6) {
