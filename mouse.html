@@ -6,12 +6,14 @@
 <body>
 
     <!-- Write your HTML content here -->
+    <!-- paragraph element to instruct actions for user. -->
     <p id="mouse-me">Mover your mouse here.</p>
+
 <script>
 
     let mouseCount = 0
     // Write your script here
-    let message = document.querySelector('#mouse-me')//counting the move-overs.
+    let message = document.querySelector('#mouse-me')// varaiable message counting the move-overs.
 
     message.addEventListener('mouseover', function() {
         mouseCount++ // counter increments one at a time simple
@@ -23,12 +25,13 @@
         //count increase by one
         }
     })
-
-    message.addEventListener('mouseout', function(){   //function for mouseover plus message about mouse movement.
-        message.innerHTML = 'Your mouse is NOT over my message anymore!'
+//function for mouseover plus message about mouse movement. eventlistener action of mouseout 
+    message.addEventListener('mouseout', function(){   
+        message.innerHTML = 'Your mouse is NOT over my message anymore!'//message diplayed when ture.
 
     })
+    // end of script 
 </script>
-
+<!-- end of html frame work and body. -->
 </body>
 </html>

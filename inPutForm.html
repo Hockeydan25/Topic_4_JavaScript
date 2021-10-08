@@ -1,19 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title></title>
+    <!-- title element, header title into the web page tab-->
+  <title>Simple Name entery Input Form</title> 
 </head>
 <body>
-        
-        <label for="username">Please enter your name</label> <!--label foir input form.-->
-        <input type="text" id="username">  <!--input form -->
-        <button id="save-user-name">Submit</button> <!--button save data username-->
+<!-- Write your HTML content here -->
+<!--paragraph element. message to welcome. -->
+    <p id="welcome-message">Welcome, to the input form! Please follow our simple directions. </p>
 
-        <p id="welcome-message">Welcome, </p>
-        
-    <!-- Write your HTML content here -->
-
-<script>// Write your script here
+        <label for="username">Please enter your name</label> <!--label element foir input form.-->
+        <input type="text" id="username">  <!--input element form or box. -->
+        <button id="save-user-name">Submit</button> <!--button element save data users name-->
+     
+            
+<script>// Write your script here, start.
 
     let saveButton = document.querySelector('#save-user-name')  //variable declared for save button.
     let nameInput = document.querySelector('#username') //variable declared name input.
@@ -28,8 +29,8 @@
         welcomeMessage.innerHTML = `Welcome, ${name}!`
         }        
     })
-
+// end of script section
 </script>
-
+<!-- end of html and html body frame work. -->
 </body>
 </html>
