@@ -6,13 +6,13 @@
 
   <!-- style element here css styling content can be added without a link to a css page -->
   <style>
-      
+      /*this selected is used with the toggle with newstudentselected listener.  */
       .selected {
         text-decoration: line-through ;
         font-style: italic;
         color: gray;
       }
-
+        /*sinple form set with a border  */
       input {
           width: 100%;
           padding: 5px;
@@ -63,7 +63,6 @@
     // [Note on HTML element notation: span#student-count means the span element with id="student-count" ]
     // When the page loads:
     //     * Using JavaScript, display 0 in the span#student-count  (1pt)
-    
     
     //let maxStudentList = 10 //limits elements in the list 
     //let studentTextMax = 50 //limits text entery
@@ -119,12 +118,12 @@
         })
         studentList.appendChild(newStudentItem)
        
-        studentCount++ 
-        spanCount.innerHTML = studentCount
-        studentNameInput.value = ''
+        studentCount++ // counting each entery
+        spanCount.innerHTML = studentCount 
+        studentNameInput.value = '' // these three staements reset their forms to blank after entery.
         studentIdInput.value = ''
         studentGpaInput.value = ''         
-    })
+    })// end of addButton function.
         
             // - Set the innerHTML of the li element to a string containing the student's name, id, and GPA  (1pt)
             //     for example "Beyonce Knowles, id: aa1234bb, GPA 3.8"
@@ -137,10 +136,13 @@
             // - Add the new li element to ul#student-list element (1pt)
             // - Clear the values of the three input elements (1pt)
             // - Update the span#student-count value to the new number of students (1pt)
-    removeButton.addEventListener('click',function(){
-        studentList.innerHTML = ''
+        
+    removeButton.addEventListener('click',function(){   //studentCount - needs to reduce spancount.
+        //let reduceList = document.querySelector('', studentList)
+        
+        studentList.innerHTML = ''  //trouble getting something here to just remove the selected.
 
-       //studentCount - needs to reduce spancount.
+      
     })
     
         // * Add an event listener so that when button#remove-selected-students is clicked:
