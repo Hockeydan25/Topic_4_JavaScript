@@ -138,11 +138,13 @@
             // - Update the span#student-count value to the new number of students (1pt)
         
     removeButton.addEventListener('click',function(){   //studentCount - needs to reduce spancount.
-        //let reduceList = document.querySelector('', studentList)
+        let reduceList = document.querySelector('student-list')
+            reduceList.addEventListener('click', function(){
+            newStudentItem.classList.toggle("selected")
+        })
         
-        studentList.innerHTML = ''  //trouble getting something here to just remove the selected.
-
-      
+        
+      //  studentList.innerHTML = ''  //trouble getting something here to just remove the selected.
     })
     
         // * Add an event listener so that when button#remove-selected-students is clicked:
